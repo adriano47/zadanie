@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
         .wrapper{
-            display: flex;
-
-        }
-        .container{
-
+            font-family: 'Open Sans', sans-serif;
         }
     </style>
 </head>
@@ -23,6 +19,7 @@
     <div class="container">
         @yield('welcome_content')
         @yield('users_content')
+        @yield('userEdit_content')
         @yield('userEdited_content')
     </div>
 </body>
