@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users/{id}', 'UsersController@show');
-Route::get('users/{id}/edit', 'UsersController@edit');
-Route::get('userEdited{id}', 'UsersController@userEdited');
+Route::get('/users', 'UsersController@show');
+Route::get('/users/{id}/edit', 'UsersController@edit');
+Route::post('/userEdited', 'UsersController@userEdited');

@@ -14,15 +14,39 @@
             width: 200px;
         }
         .form_button{
-            width: fit-content;
+            cursor: pointer;
+            margin: 5px 0;
+            padding: 5px;
+            text-decoration: none;
             width: -moz-fit-content;
-            padding: 0 5px;
+            width: fit-content;
+            background: #4E9CAF;
+            text-align: center;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-weight: bold;
+        }
+        .back_button{
+            cursor: pointer;
+            margin: 5px 0;
+            padding: 5px;
+            display: inline-block;
+            text-decoration: none;
+            width: -moz-fit-content;
+            width: fit-content;
+            background: #4E9CAF;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <form class="form" action="/userEdited" method="post">
+    <form class="form" action='/userEdited' method="post">
         {{csrf_field()}}
+        <input class="field" type="text" name="id" value="{{$user->id}}" hidden>
         <label>Name </label>
         <input class="field" type="text" name="name">
         <label>Email </label>
@@ -33,7 +57,7 @@
             <input class="form_button" type="submit" value="Accept">
             <input class="form_button" type="reset" value="Reset">
         </div>
-        <button class="form_button">Cancel</button>
+        <a class="back_button" href="/users">Cancel</a>
     </form>
 </body>
 </html>

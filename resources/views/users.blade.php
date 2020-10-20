@@ -1,13 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Users</title>
+@extends('layout.app')
+
+@section('users_content')
     <style>
-        .user__table{
-        }
         .user__table td{
             border: 1px solid black;
             padding: 2px;
@@ -27,8 +21,6 @@
             line-height: 25px;
         }
     </style>
-</head>
-<body>
     <div class="container">
         <div>
             <table class="user__table">
@@ -41,17 +33,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>{{$user->id}} </td>
-                    <td>{{$user->name}} </td>
-                    <td>{{$user->email}} </td>
-                    <td>{{$user->city}} </td>
-                </tr>
+                @foreach($users as $user)
+                    <tr>
+                        <td>{{$user->id}} </td>
+                        <td>{{$user->name}} </td>
+                        <td>{{$user->email}} </td>
+                        <td>{{$user->city}} </td>
+                        <td><a href="{{url('/users/' . $user->id . '/edit')}}" class="editUser">Edit User</a></td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
-        <a href="{{url('/users/' . $user->id . '/edit')}}" class="editUser">Edit User</a>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</body>
-</html>
